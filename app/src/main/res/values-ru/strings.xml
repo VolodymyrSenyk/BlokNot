@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_item_add_note">Добавить заметку</string>
+    <string name="menu_item_edit_note">Редактировать</string>
+    <string name="menu_item_save_note">Сохранить изменения</string>
+    <string name="menu_item_delete_note">Удалить заметку</string>
+    <string name="menu_item_change_theme">Сменить тему</string>
+    <string name="menu_item_create_backup">Создать резервную копию</string>
+    <string name="menu_item_apply_backup">Применить резервную копию</string>
+    <string name="menu_item_change_password">Сменить пароль</string>
+
+    <string name="swipe_action_edit_note">Редактировать</string>
+    <string name="swipe_action_delete_note">Удалить</string>
+
+    <string name="dialog_answer_cancel">Отмена</string>
+    <string name="dialog_answer_continue">Продолжить</string>
+
+    <string name="notes_list_empty_state">Заметки не найдены</string>
+
+    <string name="note_last_update_output">%1$s</string>
+    <string name="crypto_mode_password_output">Текущий пароль: %1$s</string>
+
+    <string name="edit_note_name_hint">Название</string>
+    <string name="edit_note_content_hint">Текст заметки</string>
+    <string name="backup_password_hint">Пароль для резервной копии</string>
+    <string name="password_setup_hint">
+        Установите пароль для перехода в секретный режим путём нажатия на кнопки с цифрами.
+        После установления пароля кнопки будут скрыты, поэтому запомните их расположение сейчас.
+        Вы можете поменять пароль из меню секретного режима. Если Вы забыли пароль для перехода в секретный режим,
+        просто переустановите приложение и восстановите свои заметки из резервных копий.
+    </string>
+
+    <string name="note_successfully_saved_message">Изменения сохранены</string>
+    <string name="note_successfully_deleted_message">Заметка удалена</string>
+    <string name="permissions_not_granted_message">Приложению требуется разрешение для выполнения этого действия</string>
+    <string name="backup_successfully_created_message">Резервная копия успешно сохранена</string>
+    <string name="backup_successfully_applied_message">Резервная копия успешно применена</string>
+    <string name="file_not_available_message">Файл не доступен</string>
+    <string name="backup_secured_message">Файл не доступен</string>
+    <string name="wrong_backup_password_message">Неверный пароль</string>
+
+    <string name="dialog_secret_mode_entering_hint_title">Секретный режим</string>
+    <string name="dialog_secret_mode_entering_hint_message">Для перехода в секретный режим нажмите на %1$s на несколько секунд</string>
+
+    <string name="dialog_exit_without_save_title">Изменения не сохранены</string>
+    <string name="dialog_exit_without_save_message">Продолжить без сохранения изменений?</string>
+
+    <string name="dialog_save_empty_note_title">Пустая заметка</string>
+    <string name="dialog_save_empty_note_message">Приложение не хранит пустые заметки. Заметка %1$s будет удалена. Продолжить?</string>
+
+    <string name="dialog_delete_note_title">Удаление</string>
+    <string name="dialog_delete_note_message">Удалить заметку %1$s?</string>
+
+    <string name="dialog_select_file_for_backup_title">Создание резервной копии</string>
+    <string name="dialog_select_file_for_backup_message">Выберите или создайте файл для сохранения резервной копии</string>
+
+    <string name="dialog_select_backup_file_title">Применение резервной копии</string>
+    <string name="dialog_select_backup_file_message">Выберите файл с нужной Вам резервной копией</string>
+
+    <string name="dialog_crypto_mode_password_title">Пароль</string>
+    <string name="dialog_crypto_mode_password_message">Пароль для перехода в секретный режим успешно установлен.\nВаш пароль: %1$s</string>
+
+    <string name="dialog_no_crypto_mode_password_title">Пароль не установлен</string>
+    <string name="dialog_no_crypto_mode_password_message">Продолжить без установления пароля для перехода в секретный режим?</string>
+
+    <string name="dialog_enter_backup_password_title">Пароль</string>
+    <string name="dialog_enter_backup_password_message">Введите пароль для резервной копии</string>
+
+    <string name="dialog_no_backup_password_title">Пароль не установлен</string>
+    <string name="dialog_no_backup_password_message">Сохранить резервную копию без пароля?</string>
+
+</resources>

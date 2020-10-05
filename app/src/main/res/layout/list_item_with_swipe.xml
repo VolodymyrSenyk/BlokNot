@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/swipe_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/action_edit"
+            style="@style/SwipeLinearLayout"
+            android:background="@color/colorBackgroundControlsLight">
+
+            <ImageView
+                style="@style/SwipeImageView"
+                android:src="?attr/iconEdit" />
+
+            <TextView
+                style="@style/SwipeTextView"
+                android:text="@string/swipe_action_edit_note" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/action_delete"
+            style="@style/SwipeLinearLayout"
+            android:background="@color/colorBackgroundControlsDark">
+
+            <ImageView
+                style="@style/SwipeImageView"
+                android:src="?attr/iconDelete" />
+
+            <TextView
+                style="@style/SwipeTextView"
+                android:text="@string/swipe_action_delete_note" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/listItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundPrimaryContent"
+        android:paddingHorizontal="@dimen/padding_medium"
+        android:paddingVertical="@dimen/padding_medium">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/listItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundPrimaryContent"
+            android:textColor="@color/colorMainContent"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/listItemText"
+            app:layout_constraintEnd_toStartOf="@+id/listItemDecoration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/listItemText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundPrimaryContent"
+            android:textColor="@color/colorMainContent"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/listItemDecoration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listItemTitle" />
+
+        <ImageButton
+            android:id="@+id/listItemDecoration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorBackgroundPrimaryContent"
+            android:padding="@dimen/padding_medium"
+            android:src="@drawable/ic_right_arrow"
+            android:tint="@color/colorAdditionalContent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/listItemTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

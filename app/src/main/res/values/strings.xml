@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name" translatable="false">BlokNot</string>
+
+    <string name="name_pattern" translatable="false">«%1$s»</string>
+
+    <string name="menu_item_add_note">Add note</string>
+    <string name="menu_item_edit_note">Edit</string>
+    <string name="menu_item_save_note">Save changes</string>
+    <string name="menu_item_delete_note">Delete note</string>
+    <string name="menu_item_change_theme">Change theme</string>
+    <string name="menu_item_create_backup">Create backup</string>
+    <string name="menu_item_apply_backup">Apply backup</string>
+    <string name="menu_item_change_password">Change password</string>
+
+    <string name="swipe_action_edit_note">Edit</string>
+    <string name="swipe_action_delete_note">Delete</string>
+
+    <string name="dialog_answer_cancel">Cancel</string>
+    <string name="dialog_answer_continue">Continue</string>
+
+    <string name="notes_list_empty_state">Notes not found</string>
+
+    <string name="note_last_update_output">Last edited: %1$s</string>
+    <string name="crypto_mode_password_output">Current password: %1$s</string>
+
+    <string name="edit_note_name_hint">Name</string>
+    <string name="edit_note_content_hint">Note content</string>
+    <string name="backup_password_hint">Backup password</string>
+    <string name="password_setup_hint">
+        Set a password for secret mode by pressing the buttons with numbers.
+        Once the password has been set, the buttons will be hidden, so remember their location.
+        You can change the password from the secret mode menu. If you have forgotten the password to enter the secret mode,
+        just reinstall the app and restore your notes from backups.
+    </string>
+
+    <string name="note_successfully_saved_message">Changes saved</string>
+    <string name="note_successfully_deleted_message">Note deleted</string>
+    <string name="permissions_not_granted_message">The app needs permission to perform this action</string>
+    <string name="backup_successfully_created_message">The backup is successfully saved</string>
+    <string name="backup_successfully_applied_message">The backup has been successfully applied</string>
+    <string name="file_not_available_message">File not available</string>
+    <string name="backup_secured_message">File not available</string>
+    <string name="wrong_backup_password_message">Wrong password</string>
+
+    <string name="dialog_secret_mode_entering_hint_title">Secret mode</string>
+    <string name="dialog_secret_mode_entering_hint_message">To switch to secret mode, press %1$s for a few seconds</string>
+
+    <string name="dialog_exit_without_save_title">Changes not saved</string>
+    <string name="dialog_exit_without_save_message">Continue without saving changes?</string>
+
+    <string name="dialog_save_empty_note_title">Empty note</string>
+    <string name="dialog_save_empty_note_message">The app does not store empty notes. Note %1$s will be deleted. Continue?</string>
+
+    <string name="dialog_delete_note_title">Deleting</string>
+    <string name="dialog_delete_note_message">Delete note %1$s?</string>
+
+    <string name="dialog_select_file_for_backup_title">Create a backup</string>
+    <string name="dialog_select_file_for_backup_message">Select or create a file to save the backup</string>
+
+    <string name="dialog_select_backup_file_title">Applying a backup</string>
+    <string name="dialog_select_backup_file_message">Select the file with the backup you need</string>
+
+    <string name="dialog_crypto_mode_password_title">Password</string>
+    <string name="dialog_crypto_mode_password_message">
+        The password for entering secret mode has been successfully set.\n
+        Your password: %1$s
+    </string>
+
+    <string name="dialog_no_crypto_mode_password_title">Password not set</string>
+    <string name="dialog_no_crypto_mode_password_message">Continue without setting a password to enter secret mode?</string>
+
+    <string name="dialog_enter_backup_password_title">Password</string>
+    <string name="dialog_enter_backup_password_message">Enter the password for the backup</string>
+
+    <string name="dialog_no_backup_password_title">Password not set</string>
+    <string name="dialog_no_backup_password_message">Save backup without password?</string>
+
+</resources>

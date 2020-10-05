@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.senyk.volodymyr.bloknot.presentation.entity.NoteUi" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.bloknot.presentation.viewmodel.model.NoteDetailsViewModel" />
+
+    </data>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/noteContent"
+        style="@style/NoteContentOutput"
+        android:text="@{viewModel.note.content}" />
+
+</layout>

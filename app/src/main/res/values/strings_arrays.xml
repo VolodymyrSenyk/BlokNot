@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="secret_button_1" translatable="false">1</string>
+    <string name="secret_button_2" translatable="false">2</string>
+    <string name="secret_button_3" translatable="false">3</string>
+    <string name="secret_button_4" translatable="false">4</string>
+    <string name="secret_button_5" translatable="false">5</string>
+    <string name="secret_button_6" translatable="false">6</string>
+    <string name="secret_button_7" translatable="false">7</string>
+    <string name="secret_button_8" translatable="false">8</string>
+    <string name="secret_button_9" translatable="false">9</string>
+    <string name="secret_button_0" translatable="false">0</string>
+    <string-array name="secret_buttons" translatable="false">
+        <item>@string/secret_button_1</item>
+        <item>@string/secret_button_2</item>
+        <item>@string/secret_button_3</item>
+        <item>@string/secret_button_4</item>
+        <item>@string/secret_button_5</item>
+        <item>@string/secret_button_6</item>
+        <item>@string/secret_button_7</item>
+        <item>@string/secret_button_8</item>
+        <item>@string/secret_button_9</item>
+        <item>@string/secret_button_0</item>
+    </string-array>
+
+</resources>

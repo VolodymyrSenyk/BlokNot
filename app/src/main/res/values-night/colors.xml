@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorBackgroundControlsDark">#000</color>
+    <color name="colorBackgroundControlsPrimary">#060606</color>
+    <color name="colorBackgroundControlsLight">#333</color>
+
+    <color name="colorBackgroundPrimary">#222</color>
+    <color name="colorBackgroundPrimaryContent">#777</color>
+    <color name="colorBackgroundAdditionalContent">#333</color>
+
+    <color name="colorControlsContent">#AAA</color>
+    <color name="colorMainContent">#060606</color>
+    <color name="colorAdditionalContent">#999</color>
+
+</resources>

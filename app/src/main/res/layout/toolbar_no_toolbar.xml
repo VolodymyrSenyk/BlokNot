@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.senyk.volodymyr.bloknot.presentation.view.AppBarLayoutStub xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbarViewStub"
+    style="@style/AppBarLayoutStub" />

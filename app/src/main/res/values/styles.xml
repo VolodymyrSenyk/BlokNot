@@ -1,0 +1,188 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorBackgroundControlsPrimary</item>
+        <item name="colorPrimaryDark">@color/colorBackgroundControlsDark</item>
+        <item name="colorAccent">@color/colorBackgroundControlsLight</item>
+        <item name="recyclerViewStyle">@style/RecyclerView</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+
+        <item name="android:navigationBarColor">@color/colorBackgroundAdditionalContent</item>
+        <item name="android:itemTextAppearance">@style/Toolbar.MenuText</item>
+
+        <item name="iconDay">@drawable/ic_day</item>
+        <item name="iconNight">@drawable/ic_night</item>
+        <item name="iconAdd">@drawable/ic_add</item>
+        <item name="iconEdit">@drawable/ic_pencil</item>
+        <item name="iconSave">@drawable/ic_floppy_disk</item>
+        <item name="iconCancel">@drawable/ic_close</item>
+        <item name="iconDelete">@drawable/ic_trash</item>
+        <item name="iconDeleteText">@drawable/ic_delete</item>
+        <item name="iconBack">@drawable/ic_arrow_back</item>
+        <item name="iconCreateBackup">@drawable/ic_up_arrow</item>
+        <item name="iconApplyBackup">@drawable/ic_save_file</item>
+        <item name="iconMenuOther">@drawable/ic_menu</item>
+        <item name="iconPassword">@drawable/ic_padlock</item>
+
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="AppBarLayoutStub">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.DayNight.ActionBar</item>
+    </style>
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="layout_scrollFlags">scroll|enterAlways</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.DayNight</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:elevation">@dimen/elevation_medium</item>
+        <item name="titleTextColor">@color/colorControlsContent</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorControlsContent</item>
+    </style>
+
+    <style name="Toolbar.MenuText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/colorControlsContent</item>
+    </style>
+
+    <style name="NoteContentOutput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/padding_medium</item>
+        <item name="android:background">@color/colorBackgroundPrimaryContent</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/colorMainContent</item>
+        <item name="android:enabled">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:longClickable">true</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:autoLink">all</item>
+    </style>
+
+    <style name="NoteContentInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/padding_medium</item>
+        <item name="android:background">@drawable/list_item_background</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/colorMainContent</item>
+        <item name="android:textColorHint">@color/colorAdditionalContent</item>
+        <item name="android:ems">10</item>
+        <item name="android:maxLength">3000</item>
+        <item name="android:inputType">
+            textLongMessage|textMultiLine|textNoSuggestions|textCapSentences
+        </item>
+        <item name="android:enabled">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:longClickable">true</item>
+        <item name="android:textIsSelectable">true</item>
+        <item name="android:autoLink">all</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="NoteTitleInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/list_item_background</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/colorMainContent</item>
+        <item name="android:textColorHint">@color/colorAdditionalContent</item>
+        <item name="android:maxLength">60</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">
+            textShortMessage|textNoSuggestions|textCapSentences
+        </item>
+        <item name="android:padding">@dimen/padding_small</item>
+    </style>
+
+    <style name="RecyclerView">
+        <item name="android:itemPadding">@dimen/padding_small</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="SecretButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_margin">@dimen/size_divider</item>
+        <item name="android:background">@color/colorBackgroundPrimaryContent</item>
+        <item name="android:textColor">@color/colorMainContent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AdditionalText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">false</item>
+        <item name="android:elevation">@dimen/elevation_big</item>
+        <item name="android:padding">@dimen/padding_big</item>
+        <item name="android:textColor">@color/colorAdditionalContent</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AlertDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowTitleStyle">@style/AlertDialog.Title</item>
+        <item name="android:textColorPrimary">@color/colorMainContent</item>
+        <item name="android:colorAccent">@color/colorAdditionalContent</item>
+        <item name="android:background">@color/colorBackgroundPrimaryContent</item>
+    </style>
+
+    <style name="AlertDialog.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PasswordInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorMainContent</item>
+        <item name="android:textColorHint">@color/colorBackgroundControlsLight</item>
+        <item name="android:background">@color/colorBackgroundPrimaryContent</item>
+        <item name="android:layout_margin">@dimen/margin_medium</item>
+        <item name="android:maxLength">30</item>
+    </style>
+
+    <style name="FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_big</item>
+        <item name="android:backgroundTint">@color/colorBackgroundControlsLight</item>
+        <item name="android:tint">@color/colorControlsContent</item>
+        <item name="tint">@color/colorControlsContent</item>
+    </style>
+
+    <style name="SwipeLinearLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="SwipeImageView">
+        <item name="android:padding">@dimen/padding_medium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:tint">@color/colorControlsContent</item>
+    </style>
+
+    <style name="SwipeTextView">
+        <item name="android:textColor">@color/colorControlsContent</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/notesListFragment">
+
+    <fragment
+        android:id="@+id/notesListFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.NotesListFragment"
+        android:label="NotesListFragment"
+        tools:layout="@layout/fragment_notes_list">
+        <action
+            android:id="@+id/action_notesListFragment_to_editNoteFragment"
+            app:destination="@id/editNoteFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_notesListFragment_to_noteDetailsFragment"
+            app:destination="@id/noteDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_notesListFragment_to_invisibleLockFragment"
+            app:destination="@id/invisibleLockFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteDetailsFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.NoteDetailsFragment"
+        android:label="NoteDetailsFragment"
+        tools:layout="@layout/fragment_note_details">
+        <action
+            android:id="@+id/action_noteDetailsFragment_to_editNoteFragment"
+            app:destination="@id/editNoteFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="noteId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editNoteFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.EditNoteFragment"
+        android:label="EditNoteFragment"
+        tools:layout="@layout/fragment_edit_note">
+        <action
+            android:id="@+id/action_editNoteFragment_to_noteDetailsFragment"
+            app:destination="@id/noteDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/notesListFragment" />
+        <argument
+            android:name="noteId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/invisibleLockFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.InvisibleLockFragment"
+        android:label="InvisibleLockFragment"
+        tools:layout="@layout/fragment_invisible_lock">
+        <action
+            android:id="@+id/action_invisibleLockFragment_to_cryptoNotesListFragment"
+            app:destination="@id/cryptoNotesListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cryptoNotesListFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.CryptoNotesListFragment"
+        android:label="CryptoNotesListFragment"
+        tools:layout="@layout/fragment_notes_list">
+        <action
+            android:id="@+id/action_cryptoNotesListFragment_to_editCryptoNoteFragment"
+            app:destination="@id/editCryptoNoteFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_cryptoNotesListFragment_to_cryptoNoteDetailsFragment"
+            app:destination="@id/cryptoNoteDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cryptoNoteDetailsFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.CryptoNoteDetailsFragment"
+        android:label="CryptoNoteDetailsFragment"
+        tools:layout="@layout/fragment_crypto_note_details">
+        <action
+            android:id="@+id/action_cryptoNoteDetailsFragment_to_editCryptoNoteFragment"
+            app:destination="@id/editCryptoNoteFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="noteId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editCryptoNoteFragment"
+        android:name="com.senyk.volodymyr.bloknot.presentation.view.fragment.EditCryptoNoteFragment"
+        android:label="EditCryptoNoteFragment"
+        tools:layout="@layout/fragment_edit_crypto_note">
+        <action
+            android:id="@+id/action_editCryptoNoteFragment_to_cryptoNoteDetailsFragment"
+            app:destination="@id/cryptoNoteDetailsFragment"
+            app:enterAnim="@android:anim/fade_out"
+            app:exitAnim="@android:anim/fade_in"
+            app:popEnterAnim="@android:anim/fade_out"
+            app:popExitAnim="@android:anim/fade_in"
+            app:popUpTo="@id/cryptoNotesListFragment" />
+        <argument
+            android:name="noteId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>

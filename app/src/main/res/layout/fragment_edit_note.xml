@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.senyk.volodymyr.bloknot.presentation.entity.NoteUi" />
+
+        <variable
+            name="viewModel"
+            type="com.senyk.volodymyr.bloknot.presentation.viewmodel.model.EditNoteViewModel" />
+
+    </data>
+
+    <EditText
+        android:id="@+id/noteContentInputField"
+        style="@style/NoteContentInput"
+        android:hint="@string/edit_note_content_hint"
+        android:text="@{viewModel.note.content}" />
+
+</layout>
