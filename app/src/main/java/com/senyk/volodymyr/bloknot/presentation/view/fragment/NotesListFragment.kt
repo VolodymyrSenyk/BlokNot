@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.senyk.volodymyr.bloknot.R
 import com.senyk.volodymyr.bloknot.presentation.view.dialog.DeleteNoteDialogFragment

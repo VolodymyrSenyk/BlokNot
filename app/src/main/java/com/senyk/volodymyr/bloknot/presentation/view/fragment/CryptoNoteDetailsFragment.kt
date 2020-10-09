@@ -1,7 +1,6 @@
 package com.senyk.volodymyr.bloknot.presentation.view.fragment
 
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -10,15 +9,12 @@ import androidx.annotation.NonNull
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.RecyclerView
 import com.senyk.volodymyr.bloknot.R
 import com.senyk.volodymyr.bloknot.databinding.FragmentCryptoNoteDetailsBinding
 import com.senyk.volodymyr.bloknot.presentation.view.dialog.DeleteNoteDialogFragment
 import com.senyk.volodymyr.bloknot.presentation.view.fragment.base.BaseCryptoNotepadCryptoFragment
-import com.senyk.volodymyr.bloknot.presentation.view.util.DoubleClickListener
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.model.CryptoNoteDetailsViewModel
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.AttrValuesProvisionUtil
-import kotlinx.android.synthetic.main.fragment_crypto_note_details.*
 
 class CryptoNoteDetailsFragment : BaseCryptoNotepadCryptoFragment(),
     DeleteNoteDialogFragment.OnButtonClickListener {

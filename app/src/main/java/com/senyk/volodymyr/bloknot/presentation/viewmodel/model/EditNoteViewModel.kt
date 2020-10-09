@@ -54,7 +54,11 @@ class EditNoteViewModel @Inject constructor(
             onSaveEmptyNoteClick(currentNoteName = noteName)
         } else {
             subscribe(
-                upstream = saveNoteUseCase(note = if (note.name.trim().isEmpty()) note.copy(name = DateFormatterUtil.getShortInternationalDate()) else note),
+                upstream = saveNoteUseCase(
+                    note = if (note.name.trim()
+                            .isEmpty()
+                    ) note.copy(name = DateFormatterUtil.getShortInternationalDate()) else note
+                ),
                 onSuccess = { updatedNote ->
                     navigateToNoteDetailsFragment(noteId = updatedNote.id)
                     _toastMessage.setValue(resourcesProvider.getString(R.string.note_successfully_saved_message))

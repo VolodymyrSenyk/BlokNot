@@ -1,7 +1,6 @@
 package com.senyk.volodymyr.bloknot.presentation.view.fragment
 
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import android.view.*
 import android.widget.EditText
 import androidx.activity.OnBackPressedCallback
