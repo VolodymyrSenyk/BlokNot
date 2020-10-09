@@ -5,9 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import com.senyk.volodymyr.bloknot.R
 import com.senyk.volodymyr.bloknot.domain.interactor.AppFirstLaunchInteractor
 import com.senyk.volodymyr.bloknot.presentation.view.dialog.SecretModeEnteringHintDialogFragment
+import com.senyk.volodymyr.bloknot.presentation.view.util.DoubleClickListener
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.base.BaseRxViewModel
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.livedata.HandledEventLiveData
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.livedata.event.HandledEvent
+import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.livedata.event.navigation.NavigateBackEvent
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.livedata.event.navigation.NavigateBackToFragmentEvent
 import javax.inject.Inject
 
@@ -18,6 +20,16 @@ class CryptoNotepadViewModel @Inject constructor(
     private val _firstLaunch = HandledEventLiveData<Boolean>()
     val isFirstLaunch: LiveData<HandledEvent<Boolean>>
         get() = _firstLaunch
+
+    private val clickListener = object : DoubleClickListener() {
+        override fun onSingleClick() {
+            _navigationEvent.setHandledValue(NavigateBackEvent())
+        }
+
+        override fun onDoubleClick() {
+            exitCryptoMode()
+        }
+    }
 
     private val _inSecretMode = MutableLiveData<Boolean>()
     val isInSecretMode: LiveData<Boolean>
@@ -44,6 +56,14 @@ class CryptoNotepadViewModel @Inject constructor(
     }
 
     fun onApplicationHide() {
+        exitCryptoMode()
+    }
+
+    fun onBackPressed() {
+        clickListener.onClick()
+    }
+
+    private fun exitCryptoMode() {
         if (isInSecretMode.value == true) {
             val destination = R.id.notesListFragment
             _navigationEvent.setHandledValue(NavigateBackToFragmentEvent(destination = destination))

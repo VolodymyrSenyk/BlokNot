@@ -2,7 +2,7 @@ package com.senyk.volodymyr.bloknot.presentation.view.util
 
 import android.view.View
 
-abstract class DoubleClickListener : View.OnClickListener {
+abstract class DoubleViewClickListener : View.OnClickListener {
 
     private var lastClickTime = 0L
 

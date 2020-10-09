@@ -18,8 +18,7 @@ abstract class BaseCryptoNotepadActivity : BaseDayNightActivity() {
         cryptoNotepadViewModel.onStart()
     }
 
-    override fun onStop() {
-        cryptoNotepadViewModel.onApplicationHide()
-        super.onStop()
+    override fun onBackPressed() {
+        cryptoNotepadViewModel.onBackPressed()
     }
 }
