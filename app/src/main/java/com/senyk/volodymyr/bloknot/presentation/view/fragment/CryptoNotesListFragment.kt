@@ -6,7 +6,6 @@ import android.view.MenuItem
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.senyk.volodymyr.bloknot.R
 import com.senyk.volodymyr.bloknot.presentation.view.dialog.DeleteNoteDialogFragment
@@ -58,7 +57,7 @@ class CryptoNotesListFragment : BaseCryptoNotepadCryptoFragment(),
         notesList.addItemDecoration(dividerItemDecoration)
         initRecyclerTouchListener()
 
-        viewModel.dataList.observe(viewLifecycleOwner, Observer { dataList ->
+        viewModel.dataList.observe(viewLifecycleOwner, { dataList ->
             adapter.submitList(dataList)
         })
 
@@ -67,7 +66,6 @@ class CryptoNotesListFragment : BaseCryptoNotepadCryptoFragment(),
         setBaseObservers(cryptoBackupViewModel)
 
         viewModel.onStart()
-        cryptoBackupViewModel.onStart(requireContext())
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
@@ -90,14 +88,6 @@ class CryptoNotesListFragment : BaseCryptoNotepadCryptoFragment(),
 
             else -> super.onOptionsItemSelected(item)
         }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        cryptoBackupViewModel.onRequestPermissionsResult(requestCode, requireContext())
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         cryptoBackupViewModel.onActivityResult(requestCode, resultCode, data, requireContext())

@@ -55,7 +55,6 @@ class NotesListFragment : BaseCryptoNotepadFragment(),
         setBaseObservers(backupViewModel)
 
         viewModel.onStart()
-        backupViewModel.onStart(requireContext())
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
@@ -74,14 +73,6 @@ class NotesListFragment : BaseCryptoNotepadFragment(),
 
             else -> super.onOptionsItemSelected(item)
         }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        backupViewModel.onRequestPermissionsResult(requestCode, requireContext())
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         backupViewModel.onActivityResult(requestCode, resultCode, data, requireContext())

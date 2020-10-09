@@ -5,11 +5,11 @@ import android.content.Context
 import android.content.Intent
 import com.senyk.volodymyr.bloknot.R
 import com.senyk.volodymyr.bloknot.domain.exception.WrongPasswordException
-import com.senyk.volodymyr.bloknot.domain.interactor.GetRequiredPermissionsInteractor
 import com.senyk.volodymyr.bloknot.domain.usecase.backup.ApplyBackupUseCase
 import com.senyk.volodymyr.bloknot.domain.usecase.backup.CreateBackupUseCase
 import com.senyk.volodymyr.bloknot.presentation.view.util.extensions.getInputStream
 import com.senyk.volodymyr.bloknot.presentation.view.util.extensions.getOutputStream
+import com.senyk.volodymyr.bloknot.presentation.viewmodel.base.BaseRxViewModel
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.DateFormatterUtil
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.ResourcesProvider
 import com.senyk.volodymyr.bloknot.presentation.viewmodel.util.livedata.event.navigation.StartActivityForResultEvent
@@ -21,48 +21,20 @@ import javax.inject.Inject
 open class BackupViewModel @Inject constructor(
     protected val createBackupUseCase: CreateBackupUseCase,
     protected val applyBackupUseCase: ApplyBackupUseCase,
-    protected val resourcesProvider: ResourcesProvider,
-    getRequiredPermissionsInteractor: GetRequiredPermissionsInteractor
-) : PermissionsViewModel(getRequiredPermissionsInteractor) {
+    protected val resourcesProvider: ResourcesProvider
+) : BaseRxViewModel() {
 
     protected var backupCreatingInProgress = false
     protected var backupApplyingInProgress = false
 
-    override fun onStart(context: Context) {
-        super.onStart(context)
-        setPermissionsObserver()
-    }
-
-    open fun setPermissionsObserver() {
-        allPermissionsGranted.observeForever { event ->
-            if (backupCreatingInProgress || backupApplyingInProgress) {
-                if (event.handleEvent() == true) {
-                    if (backupCreatingInProgress) requestFileForBackup()
-                    else if (backupApplyingInProgress) requestBackupFile()
-                } else {
-                    onBackupInteractionStop()
-                    _toastMessage.setValue(resourcesProvider.getString(R.string.permissions_not_granted_message))
-                }
-            }
-        }
-    }
-
     open fun onCreateBackupClick() {
         backupCreatingInProgress = true
-        if (allPermissionsGranted.value?.eventData == true) {
-            requestFileForBackup()
-        } else {
-            onRequestPermissions()
-        }
+        requestFileForBackup()
     }
 
     open fun onApplyBackupClick() {
         backupApplyingInProgress = true
-        if (allPermissionsGranted.value?.eventData == true) {
-            requestBackupFile()
-        } else {
-            onRequestPermissions()
-        }
+        requestBackupFile()
     }
 
     protected open fun requestFileForBackup() {

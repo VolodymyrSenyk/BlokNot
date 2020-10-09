@@ -2,7 +2,6 @@ package com.senyk.volodymyr.bloknot.presentation.viewmodel.model
 
 import com.senyk.volodymyr.bloknot.R
 import com.senyk.volodymyr.bloknot.domain.exception.WrongPasswordException
-import com.senyk.volodymyr.bloknot.domain.interactor.GetRequiredPermissionsInteractor
 import com.senyk.volodymyr.bloknot.domain.usecase.backup.ApplyBackupUseCase
 import com.senyk.volodymyr.bloknot.domain.usecase.backup.CreateBackupUseCase
 import com.senyk.volodymyr.bloknot.presentation.view.dialog.EnterPasswordDialogFragment
@@ -18,33 +17,15 @@ open class CryptoBackupViewModel @Inject constructor(
     createBackupUseCase: CreateBackupUseCase,
     applyBackupUseCase: ApplyBackupUseCase,
     resourcesProvider: ResourcesProvider,
-    getRequiredPermissionsInteractor: GetRequiredPermissionsInteractor
 ) : BackupViewModel(
     createBackupUseCase,
     applyBackupUseCase,
-    resourcesProvider,
-    getRequiredPermissionsInteractor
+    resourcesProvider
 ) {
 
     private var backupFile: InputStream? = null
     private var fileForBackup: OutputStream? = null
     protected var passwordRequestInProgress = false
-
-    override fun setPermissionsObserver() {
-        allPermissionsGranted.observeForever { event ->
-            if (backupCreatingInProgress || backupApplyingInProgress) {
-                if (passwordRequestInProgress) {
-                    onBackupInteractionStop()
-                    passwordRequestInProgress = false
-                } else if (event.handleEvent() == true) {
-                    if (backupCreatingInProgress) requestFileForBackup()
-                    else if (backupApplyingInProgress) requestBackupFile()
-                } else {
-                    _toastMessage.setValue(resourcesProvider.getString(R.string.permissions_not_granted_message))
-                }
-            }
-        }
-    }
 
     override fun onFileForBackupSelected(outputStream: OutputStream) {
         fileForBackup = outputStream
